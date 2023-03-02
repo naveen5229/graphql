@@ -28,5 +28,5 @@ jobs:
           mongodb-version: ${{ matrix.mongo_version }}
           mongodb-replica-set: test-rs
       - run: npm install
-      - run: npm run build --prefix ./../../event-booking-client
+      - run: npm run build --prefix event-booking-client
       - run: npm run test

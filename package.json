@@ -1,0 +1,15 @@
+{
+  "name": "graphql-fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "npm start --prefix ./event-booking-server",
+    "start-client": "npm start --prefix ./event-booking-client",
+    "deploy": "npm run build --prefix ./event-booking-client && npm run start-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

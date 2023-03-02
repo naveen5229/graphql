@@ -1,0 +1,31 @@
+name: event-booking-CI-workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    env:
+      CI: true
+      MONGO_URL: mongodb://localhost/graphql
+    strategy:
+      matrix:
+        node_version: [ 16.x, 18.x ]
+        mongo_version: [ '4.2' ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: use node with version ${{ matrix.node_version }}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version }}
+
+      - name: use mongodb with version ${{ matrix.mongodb_version }}
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: ${{ matrix.mongo_version }}
+          mongodb-replica-set: test-rs
+      - run: npm install
+      - run: npm run build --prefix ./event-booking-client

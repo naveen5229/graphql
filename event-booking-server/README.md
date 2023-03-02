@@ -1,0 +1,1 @@
+<!-- setup your own mongoDb atlas and provide connect url in local .env file with given variable name in server file -->

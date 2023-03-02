@@ -1,0 +1,16 @@
+.eventAddController{
+    text-align: end;
+}
+
+.table-header{
+    text-align: center;
+}
+
+.event-table{
+    margin: 2rem;
+}
+
+.event-table table{
+    margin: 0 auto;
+    width: 100%;
+}
